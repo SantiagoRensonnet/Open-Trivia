@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.container{
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.start-btn{
+    width:clamp(190px,40%,250px);
+    aspect-ratio: 3.8;
+    background: linear-gradient(180deg, #FFEFBA -131.73%, #F3F3F3 100%, #F3F3F3 100%);
+    border-radius: 1rem;
+}
+.logo{
+    width: clamp(152px,32%,200px);
+}
