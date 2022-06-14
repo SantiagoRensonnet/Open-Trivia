@@ -11,6 +11,9 @@
     width: 100vw;
     height: 100vh;
 }
+.quiz-container{
+    color:white;
+}
 .start-btn{
     width:clamp(190px,40%,250px);
     aspect-ratio: 3.8;

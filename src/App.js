@@ -1,11 +1,17 @@
 import React from "react";
-import logo from "./assets/images/logo.png";
+import UIStateMachine from "./components/UIStateMachine";
+
 export default function App() {
   const [gameState, setGameState] = React.useState("START");
+
+  //Event Handlers
+  function gameStateHandle(newGameState) {
+    setGameState(newGameState);
+  }
+
   return (
     <div className="container">
-      <img src={logo} alt="Logo" className="logo" />
-      <button className="btn start-btn">Start Quiz</button>
+      <UIStateMachine gameState={gameState} gameStateHandle={gameStateHandle} />
     </div>
   );
 }
