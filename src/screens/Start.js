@@ -3,7 +3,7 @@ export default function Start({ gameStateHandle }) {
   return (
     <>
       <img src={logo} alt="Logo" className="logo" />
-      <button className="btn start-btn" onClick={() => gameStateHandle("QUIZ")}>
+      <button className="btn start-btn" onClick={() => gameStateHandle("GAME")}>
         Start Quiz
       </button>
     </>

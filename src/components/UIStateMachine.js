@@ -1,14 +1,14 @@
 import React from "react";
-import Quiz from "../containers/Quiz";
-import Start from "./../containers/Start";
+import Game from "../screens/Game";
+import Start from "./../screens/Start";
 
 export default function UIStateMachine({ gameState, gameStateHandle }) {
   switch (gameState) {
     case "START":
       return <Start gameStateHandle={gameStateHandle} />;
 
-    case "QUIZ":
-      return <Quiz numberOfQuestions={5} />;
+    case "GAME":
+      return <Game numberOfQuestions={5} />;
 
     default:
       return new Error("UI Failed");

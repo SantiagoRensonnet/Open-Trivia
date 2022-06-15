@@ -30,3 +30,6 @@ src/reportWebVitals.js
 src/setupTests.js
 src/components/Start.js
 src/components/Quiz.js
+src/containers/CheckAnswers.js
+src/containers/Quiz.js
+src/containers/Start.js
