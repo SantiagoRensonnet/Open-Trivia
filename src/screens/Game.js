@@ -28,5 +28,18 @@ export default function Game({ numberOfQuestions }) {
     quizData.map((element, index) => {
       return <Question key={index} {...element} />;
     });
-  return <div className="quiz-container">{quizData && questionComponents}</div>;
+  return (
+    <div className="quiz-container">
+      {quizData ? (
+        <>
+          <>{questionComponents}</>
+          <div className="button-container center-box">
+            <button className="btn check-btn">Check answers</button>
+          </div>
+        </>
+      ) : (
+        <h1 className="loading">Loading...</h1>
+      )}
+    </div>
+  );
 }

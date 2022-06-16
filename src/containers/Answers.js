@@ -18,5 +18,5 @@ export default function Answers(props) {
   const Answers = allAnswers(props.correctAnswer, props.incorrectAnswers).map(
     (element, index) => <Answer key={index} {...element} />
   );
-  return <ul>{Answers}</ul>;
+  return <div className="answers-container">{Answers}</div>;
 }

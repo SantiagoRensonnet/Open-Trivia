@@ -1,6 +1,29 @@
+@font-face {
+    font-family: 'Karla';
+    src: url('./assets/fonts/Karla-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-Bold.ttf');
+    font-weight: 700;
+}
 *{
     box-sizing: border-box;
     margin: 0;
+}
+
+body{
+    font-family: 'Inter',sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+   
+    
 }
 .container{
     background-color: #222;
@@ -10,16 +33,90 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    overflow-y:auto;
 }
 .quiz-container{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     color:white;
+    
+}
+.center-box{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.question-container,.button-container{
+    height: calc(100vh/6);
+    min-height: 100px;
+    width:100%;
+}
+.question-container{
+    border-bottom: 1px solid white;
+}
+.answers-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    
+}
+.question{
+    text-align: center;
+    font-family: 'Karla',sans-serif;
+    font-weight: 700;
+}
+.answer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    padding: 0.2rem 1.15rem;
+    border: 0.794239px solid #F3F3F3;
+    border-radius: 7.94239px;
+}
+.btn{
+    
+    aspect-ratio: 3.8;
+    border-radius: 1rem;
 }
 .start-btn{
     width:clamp(190px,40%,250px);
-    aspect-ratio: 3.8;
     background: linear-gradient(180deg, #FFEFBA -131.73%, #F3F3F3 100%, #F3F3F3 100%);
-    border-radius: 1rem;
+    
+}
+.check-btn{
+    width:clamp(120px,50%,200px);
+    background-color: #F3F3F3;
 }
 .logo{
     width: clamp(152px,32%,200px);
+}
+
+
+/* Media Queries */
+@media (max-width:767.98px) {
+    
+    .quiz-container{
+        display: block;
+        min-height: 550px;
+    }
+    .answers-container{
+        display: block;
+        width:fit-content;
+    }
+   
+    .question-container,.button-container{
+       /* height: clamp(calc(550px/3),calc(100vh/3),calc(700px/3)); */
+      
+       height: calc(33%);
+    }
 }
