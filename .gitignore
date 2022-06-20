@@ -33,3 +33,9 @@ src/components/Quiz.js
 src/containers/CheckAnswers.js
 src/containers/Quiz.js
 src/containers/Start.js
+src/components/Answer.js
+src/components/UIStateMachine.js
+src/containers/Answers.js
+src/containers/Question.js
+src/screens/Game.js
+.gitignore

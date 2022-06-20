@@ -25,28 +25,39 @@ body{
    
     
 }
+::selection{
+    background-color: none;
+}
 .container{
     background-color: #222;
     
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 100vw;
     height: 100vh;
     min-height: 600px;
     overflow-y:auto;
 }
-.quiz-container{
-    width:80%;
-    max-width: 1200px;
+.start-container,.load-container,.error-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.error-container{
+    color: white;
+}
+.quiz-container{
     
+    width:60%;
+    max-width: 1000px;
+    display:grid;
+    grid-template-rows: repeat(6,1fr);
     color:white;
     
+}
+.loading{
+    color:white;
 }
 .center-box{
    
@@ -77,8 +88,9 @@ body{
     text-align: center;
     font-family: 'Karla',sans-serif;
     font-weight: 700;
+    cursor:default;
 }
-.answer{
+.answer-selected,.answer-not-selected,.answer-correct,.answer-incorrect,.answer-none{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,20 +100,46 @@ body{
     margin:0 0.4%;
     border: 0.794239px solid #F3F3F3;
     border-radius: 7.94239px;
+
+    cursor: pointer;
+}
+.answer-selected{
+    background-color: #116FD0;
+}
+.answer-not-selected,.answer-none{
+    background: none;
+}
+.answer-correct{
+    background-color: green;;
+}
+.answer-incorrect{
+    background-color: red;
+}
+.answer-not-selected:hover{
+    background-color: rgb(17, 112, 208,0.6);
 }
 .btn{
     
     aspect-ratio: 3.8;
     border-radius: 1rem;
+    cursor: pointer;
 }
+
 .start-btn{
     width:clamp(190px,40%,250px);
     background: linear-gradient(180deg, #FFEFBA -131.73%, #F3F3F3 100%, #F3F3F3 100%);
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+    font-size: 1.3rem;
     
 }
 .check-btn{
     width:clamp(120px,50%,200px);
     background-color: #F3F3F3;
+}
+.check-btn:disabled{
+    border: 2px solid rgba(243, 243, 243,0.1);
+    background-color: rgba(243, 243, 243,0);
+    color:rgba(255,255,255,0.7);
 }
 .logo{
     width: clamp(152px,32%,200px);
@@ -113,6 +151,7 @@ body{
     
     .quiz-container{
         display: block;
+        width: 80%;
         min-height: 550px;
     }
     .answers-container{
@@ -121,7 +160,6 @@ body{
         width: 80%;
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(2,1fr);
         gap: 0.35em;
     }
    

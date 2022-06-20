@@ -1,17 +1,26 @@
-import React from "react";
-import UIStateMachine from "./components/UIStateMachine";
+import React, { useState } from "react";
+import UIStateMachine from "./components/utils/UIStateMachine";
 
 export default function App() {
-  const [gameState, setGameState] = React.useState("START");
+  //gameState
+  const [gameState, setGameState] = useState("START");
+  //Quiz Data from API
+  const [quizData, setQuizData] = useState();
 
   //Event Handlers
-  function gameStateHandle(newGameState) {
+  function changeGameState(newGameState) {
     setGameState(newGameState);
   }
 
   return (
     <div className="container">
-      <UIStateMachine gameState={gameState} gameStateHandle={gameStateHandle} />
+      <UIStateMachine
+        gameState={gameState}
+        changeGameState={changeGameState}
+        quizData={quizData}
+        setQuizData={setQuizData}
+        numberOfQuestions={5}
+      />
     </div>
   );
 }
