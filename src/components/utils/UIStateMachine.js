@@ -11,6 +11,10 @@ export default function UIStateMachine({
   changeGameState,
   quizData,
   setQuizData,
+  answersArray,
+  setAnswersArray,
+  playAgainBtnPressed,
+  setPlayAgainBtnPressed,
   numberOfQuestions,
 }) {
   switch (gameState) {
@@ -24,6 +28,10 @@ export default function UIStateMachine({
           changeGameState={changeGameState}
           quizData={quizData}
           setQuizData={setQuizData}
+          answersArray={answersArray}
+          setAnswersArray={setAnswersArray}
+          playAgainBtnPressed={playAgainBtnPressed}
+          setPlayAgainBtnPressed={setPlayAgainBtnPressed}
         />
       );
     case "PLAY ROUND":
@@ -33,6 +41,8 @@ export default function UIStateMachine({
           gameState={gameState}
           changeGameState={changeGameState}
           quizData={quizData}
+          answersArray={answersArray}
+          setAnswersArray={setAnswersArray}
         />
       );
 
@@ -42,6 +52,9 @@ export default function UIStateMachine({
           gameState={gameState}
           changeGameState={changeGameState}
           quizData={quizData}
+          answersArray={answersArray}
+          playAgainBtnPressed={playAgainBtnPressed}
+          setPlayAgainBtnPressed={setPlayAgainBtnPressed}
         />
       );
 

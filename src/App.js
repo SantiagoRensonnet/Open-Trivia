@@ -7,6 +7,8 @@ export default function App() {
   //Quiz Data from API
   const [quizData, setQuizData] = useState();
 
+  const [answersArray, setAnswersArray] = useState();
+  const [playAgainBtnPressed, setPlayAgainBtnPressed] = useState(true);
   //Event Handlers
   function changeGameState(newGameState) {
     setGameState(newGameState);
@@ -19,6 +21,10 @@ export default function App() {
         changeGameState={changeGameState}
         quizData={quizData}
         setQuizData={setQuizData}
+        answersArray={answersArray}
+        setAnswersArray={setAnswersArray}
+        playAgainBtnPressed={playAgainBtnPressed}
+        setPlayAgainBtnPressed={setPlayAgainBtnPressed}
         numberOfQuestions={5}
       />
     </div>

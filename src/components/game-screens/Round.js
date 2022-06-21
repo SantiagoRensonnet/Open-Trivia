@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import React from "react";
 import Question from "./containers/Question";
 
 export default function Round({
   quizData,
+  answersArray,
+  setAnswersArray,
   numberOfQuestions,
   gameState,
   changeGameState,
@@ -30,9 +32,12 @@ export default function Round({
       return (
         <Question
           key={index}
+          questionNumber={index}
           {...element}
           allAnsweredCheck={allAnsweredCheck}
           gameState={gameState}
+          answersArray={answersArray}
+          setAnswersArray={setAnswersArray}
         />
       );
     });

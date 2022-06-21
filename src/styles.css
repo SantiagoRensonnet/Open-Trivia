@@ -110,10 +110,10 @@ body{
     background: none;
 }
 .answer-correct{
-    background-color: green;;
+    background-color: #0CAE7C;
 }
 .answer-incorrect{
-    background-color: red;
+    background-color: #F37A18;
 }
 .answer-not-selected:hover{
     background-color: rgb(17, 112, 208,0.6);

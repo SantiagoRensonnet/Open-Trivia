@@ -13,6 +13,9 @@ export default function Question(props) {
         setIsAnswered={setIsAnswered}
         allAnsweredCheck={props.allAnsweredCheck}
         gameState={props.gameState}
+        answersArray={props.answersArray}
+        setAnswersArray={props.setAnswersArray}
+        questionNumber={props.questionNumber}
       />
     </div>
   );
