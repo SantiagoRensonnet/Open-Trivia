@@ -5,6 +5,7 @@ import Question from "./containers/Question";
 export default function Round({
   quizData,
   answersArray,
+  score,
   setAnswersArray,
   numberOfQuestions,
   gameState,
@@ -43,6 +44,7 @@ export default function Round({
     });
   return (
     <div className="quiz-container">
+      <div className="score-container">Score: {score}</div>
       <>{questionComponents}</>
       <div className="button-container center-box">
         <button
@@ -52,7 +54,7 @@ export default function Round({
             changeGameState("CHECK ANSWERS");
           }}
         >
-          Check answers
+          Check Answers
         </button>
       </div>
     </div>

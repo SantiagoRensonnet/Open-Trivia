@@ -3,7 +3,7 @@ import Start from "../game-screens/Start";
 import APIRequest from "../utils/APIRequest";
 import Round from "../game-screens/Round";
 import CheckAnswers from "../game-screens/CheckAnswers";
-import EndGame from "./Endgame";
+import EndGame from "../game-screens/EndGame";
 import Error from "./Error";
 
 export default function UIStateMachine({
@@ -13,13 +13,24 @@ export default function UIStateMachine({
   setQuizData,
   answersArray,
   setAnswersArray,
+  score,
+  setScore,
+  bestScore,
+  setBestScore,
+  setReset,
   playAgainBtnPressed,
   setPlayAgainBtnPressed,
   numberOfQuestions,
 }) {
   switch (gameState) {
     case "START":
-      return <Start changeGameState={changeGameState} />;
+      return (
+        <Start
+          changeGameState={changeGameState}
+          setScore={setScore}
+          bestScore={bestScore}
+        />
+      );
 
     case "API REQUEST":
       return (
@@ -28,7 +39,6 @@ export default function UIStateMachine({
           changeGameState={changeGameState}
           quizData={quizData}
           setQuizData={setQuizData}
-          answersArray={answersArray}
           setAnswersArray={setAnswersArray}
           playAgainBtnPressed={playAgainBtnPressed}
           setPlayAgainBtnPressed={setPlayAgainBtnPressed}
@@ -43,6 +53,7 @@ export default function UIStateMachine({
           quizData={quizData}
           answersArray={answersArray}
           setAnswersArray={setAnswersArray}
+          score={score}
         />
       );
 
@@ -53,13 +64,22 @@ export default function UIStateMachine({
           changeGameState={changeGameState}
           quizData={quizData}
           answersArray={answersArray}
-          playAgainBtnPressed={playAgainBtnPressed}
           setPlayAgainBtnPressed={setPlayAgainBtnPressed}
+          score={score}
+          setScore={setScore}
         />
       );
 
     case "END GAME":
-      return <EndGame changeGameState={changeGameState} />;
+      return (
+        <EndGame
+          changeGameState={changeGameState}
+          score={score}
+          bestScore={bestScore}
+          setBestScore={setBestScore}
+          setReset={setReset}
+        />
+      );
 
     default:
       return <Error msg="Machine Failed" />;

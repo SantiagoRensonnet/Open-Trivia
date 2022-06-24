@@ -1,17 +1,36 @@
+import { useEffect } from "react";
 export default function Answer(props) {
+  useEffect(() => {
+    if (props.gameState === "CHECK ANSWERS") {
+      if (props.isSelected) {
+        if (props.isCorrect) {
+          props.setScore((prevScore) => prevScore + 100);
+        } else {
+          props.setScore((prevScore) => prevScore - 50);
+        }
+      }
+    }
+  }, []);
+
   let style;
   if (props.gameState === "CHECK ANSWERS") {
     if (props.isCorrect) {
-      style = "answer-correct";
+      if (props.isSelected) {
+        style = "answer answer-correct";
+      } else {
+        style = "answer answer-correct-not-selected";
+      }
     } else {
       if (props.isSelected) {
-        style = "answer-incorrect";
+        style = "answer answer-incorrect";
       } else {
-        style = "answer-none";
+        style = "answer answer-none";
       }
     }
   } else {
-    style = props.isSelected ? "answer-selected" : "answer-not-selected";
+    style = props.isSelected
+      ? "answer answer-selected"
+      : "answer answer-not-selected";
   }
   return (
     <div

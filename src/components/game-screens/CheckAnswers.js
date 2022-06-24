@@ -4,7 +4,8 @@ export default function CheckAnswers({
   gameState,
   changeGameState,
   answersArray,
-  playAgainBtnPressed,
+  score,
+  setScore,
   setPlayAgainBtnPressed,
 }) {
   //            map
@@ -20,21 +21,31 @@ export default function CheckAnswers({
           allAnsweredCheck={() => 0}
           gameState={gameState}
           answersArray={answersArray}
+          setScore={setScore}
         />
       );
     });
   return (
     <div className="quiz-container">
+      <div className="score-container">Score: {score}</div>
       <>{questionComponents}</>
-      <div className="button-container center-box">
+      <div className="button-container center-buttons">
         <button
-          className="btn check-btn"
+          className="btn play-btn"
           onClick={() => {
             setPlayAgainBtnPressed(true);
             changeGameState("API REQUEST");
           }}
         >
-          PLAY AGAIN
+          Play Again
+        </button>
+        <button
+          className="btn end-btn"
+          onClick={() => {
+            changeGameState("END GAME");
+          }}
+        >
+          End Game
         </button>
       </div>
     </div>

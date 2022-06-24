@@ -30,6 +30,7 @@ export default function Answers(props) {
         {...element}
         selectAnswer={selectAnswer}
         gameState={props.gameState}
+        setScore={props.setScore}
       />
     )
   );

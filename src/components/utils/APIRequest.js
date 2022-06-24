@@ -4,7 +4,6 @@ export default function APIRequest({
   changeGameState,
   quizData,
   setQuizData,
-  answersArray,
   setAnswersArray,
   playAgainBtnPressed,
   setPlayAgainBtnPressed,

@@ -15,6 +15,7 @@ export default function Question(props) {
         gameState={props.gameState}
         answersArray={props.answersArray}
         setAnswersArray={props.setAnswersArray}
+        setScore={props.setScore}
         questionNumber={props.questionNumber}
       />
     </div>

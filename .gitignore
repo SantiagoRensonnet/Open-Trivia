@@ -39,3 +39,4 @@ src/containers/Answers.js
 src/containers/Question.js
 src/screens/Game.js
 .gitignore
+src/components/utils/Endgame.js
