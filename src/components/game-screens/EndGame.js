@@ -13,11 +13,11 @@ export default function Endgame({
   let scoreMsg;
   if (score > 0 && score > bestScore) {
     scoreMsg = (
-      <>
+      <div className="record-break">
         <Confetti width={width} height={height} />
-        <h1>You broke a new Record!!!</h1>
-        <h2>Your Score: {score}</h2>
-      </>
+        <h1>YOU BROKE A NEW RECORD!!!</h1>
+        <h2>YOUR SCORE: {score}</h2>
+      </div>
     );
   } else {
     scoreMsg = <h1>Your score is: {score}</h1>;

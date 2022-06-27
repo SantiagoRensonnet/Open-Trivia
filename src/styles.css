@@ -42,6 +42,7 @@ body{
     height: 100vh;
     min-height: 600px;
     overflow-y:auto;
+    /* overflow-x:hidden; */
 }
 .start-container,.load-container,.error-container,.endgame-container{
     display: flex;
@@ -52,7 +53,10 @@ body{
 .best-score{
     color:#F3F3F3;
     font-family: 'Karla',sans-serif;
-    font-size: 1.5em;
+    font-size:clamp(1em,4vw,1.3em);
+    
+    
+    
 }
 .error-container,.endgame-container{
     color: white;
@@ -186,7 +190,10 @@ body{
     width: clamp(152px,32%,200px);
     
 }
-
+.record-break{
+    text-align: center;
+    font-family: 'Karla',sans-serif;
+}
 
 /* Media Queries */
 @media (max-width:767.98px) {
@@ -217,5 +224,10 @@ body{
     .play-btn,.end-btn{
         margin:0.3em 0;
     }
-
+     .record-break h1{
+        font-size: 1.6rem;
+    }
+    .record-break h2{
+     font-size: 1.4rem;
+    }
 }

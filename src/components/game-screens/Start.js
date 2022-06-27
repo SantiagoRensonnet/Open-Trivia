@@ -15,7 +15,7 @@ export default function Start({ changeGameState, setScore, bestScore }) {
           START
         </button>
         {bestScore > 0 && (
-          <h1 className="best-score">Best Score: {bestScore}</h1>
+          <h1 className="best-score">BEST SCORE: {bestScore}</h1>
         )}
       </div>
     </>
